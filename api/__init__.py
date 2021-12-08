@@ -14,7 +14,11 @@ def create_app(config=config_dict['dev']):
 
     app.config.from_object(config)
 
-    api=Api(app)
+    api=Api(app,
+        title="Pizza Delivery API",
+        description="A REST API for A Pizza Delivery Service",
+        version="1.0",
+    )
 
 
     api.add_namespace(order_namespace)

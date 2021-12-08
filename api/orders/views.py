@@ -75,6 +75,8 @@ class OrderGetCreate(Resource):
 class GetUpdateDelete(Resource):
 
     @order_namespace.marshal_with(order_model)
+    @order_namespace.doc(params={"order_id":"The ID of an order"},
+                description="Retrieve an order by its ID")
     @jwt_required()
     def get(self,order_id):
         """
